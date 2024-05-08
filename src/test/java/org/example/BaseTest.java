@@ -11,12 +11,14 @@ public class BaseTest extends Utils {
     BrowserManager browserManager = new BrowserManager();
 
     @BeforeMethod
-    public void startBrowser(){
+    public void startBrowser() {
 
         browserManager.openBrowser();
     }
+
+
     @AfterMethod
-    public void tearUp(ITestResult result){
+    public void tearUp(ITestResult result) {
         if (!result.isSuccess()) {
             takeSnapShot(result.getName());
         }

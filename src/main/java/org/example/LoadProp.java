@@ -9,19 +9,19 @@ public class LoadProp {
 
     static FileInputStream input;
     static Properties prop;
-    public String getProperty(String key)
-    {
-    prop =new Properties();
-    try{
 
-        input = new FileInputStream("src/test/java/Resouces/TestData.properties");
-        prop.load(input);
-        input.close();
+    public String getProperty(String key) {
+        prop = new Properties();
+        try {
 
+            input = new FileInputStream("src/test/java/Resouces/TestData.properties");
+            prop.load(input);
+            input.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+        return prop.getProperty(key);
     }
-    catch( IOException e){
-    e.printStackTrace();
-
-    }
-    return prop.getProperty(key);
-}}
+}
